@@ -80,8 +80,10 @@ def add(request, extra_context=None, next_override=None,
         'upload_avatar_form': upload_avatar_form,
         'next': next_override or _get_next(request),
     }
+
+    template = context.get('template', 'avatar/add.html')
     context.update(extra_context)
-    return render(request, 'avatar/add.html', context)
+    return render(request, template, context)
 
 
 @login_required
