@@ -121,8 +121,10 @@ def change(request, extra_context=None, next_override=None,
         'primary_avatar_form': primary_avatar_form,
         'next': next_override or _get_next(request)
     }
+
+    template = context.get('template', 'avatar/change.html')
     context.update(extra_context)
-    return render(request, 'avatar/change.html', context)
+    return render(request, template, context)
 
 
 @login_required
