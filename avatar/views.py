@@ -160,7 +160,8 @@ def delete(request, extra_context=None, next_override=None, *args, **kwargs):
     }
     context.update(extra_context)
 
-    return render(request, 'avatar/confirm_delete.html', context)
+    template = context.get('template', 'avatar/delete.html')
+    return render(request, template, context)
 
 
 def avatar_gallery(request, username, template_name="avatar/gallery.html"):
