@@ -81,8 +81,8 @@ def add(request, extra_context=None, next_override=None,
         'next': next_override or _get_next(request),
     }
 
-    template = context.get('template', 'avatar/add.html')
     context.update(extra_context)
+    template = context.get('template', 'avatar/add.html')
     return render(request, template, context)
 
 
@@ -123,8 +123,8 @@ def change(request, extra_context=None, next_override=None,
         'next': next_override or _get_next(request)
     }
 
-    template = context.get('template', 'avatar/change.html')
     context.update(extra_context)
+    template = context.get('template', 'avatar/change.html')
     return render(request, template, context)
 
 
