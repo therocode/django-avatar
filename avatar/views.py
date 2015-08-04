@@ -90,6 +90,7 @@ def add(request, extra_context=None, next_override=None,
 def change(request, extra_context=None, next_override=None,
            upload_form=UploadAvatarForm, primary_form=PrimaryAvatarForm,
            *args, **kwargs):
+    print(extra_context) 
     if extra_context is None:
         extra_context = {}
     avatar, avatars = _get_avatars(request.user)
